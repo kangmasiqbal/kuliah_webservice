@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>RSUP Dr. Kariadi</title>
+  <title>Mokhammad Iqbal - 19.01.63.0004 - Web Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim IT RSUP Dr Kariadi"/>
   <meta name="keywords" content="Tim IT RSUP Dr Kariadi"/>
@@ -21,19 +21,19 @@
   <div clas="row">
     <div class="col-md-12">
       <div class="card">
-        <h5 class="card-header">List Mahasiswa 
-          <a href="<?php echo base_url('mahasiswa/create'); ?>" class="btn btn-sm btn-success float-right">Tambah Data</a></h5>
+        <h5 class="card-header">List Mahasiswa <a href="<?php echo base_url('mahasiswa/create'); ?>" class="btn btn-sm btn-success float-right">Tambah Data</a></h5>
         <div class="card-body">
           <center><?php echo $this->session->flashdata('hasil'); ?></center>
-          <table id="myTable" class="table table-hover">
-            <tr>
-              <th>NIM</th>
-              <th>NAMA</th>
-              <th>ID JURUSAN</th>
-              <th>ALAMAT</th>
-              <th>AKSI</th>
-            </tr>
-            <?php
+          <div class="table-responsive">
+            <table id="myTable" class="table table-hover">
+              <tr>
+                <th>NIM</th>
+                <th>NAMA</th>
+                <th>ID JURUSAN</th>
+                <th>ALAMAT</th>
+                <th>AKSI</th>
+              </tr>
+              <?php
               foreach ($mahasiswa as $m){
                 echo "<tr>
                 <td>$m->nim</td>
@@ -41,13 +41,14 @@
                 <td>$m->id_jurusan</td>
                 <td>$m->alamat</td>
                 <td>
-                  <a href='".base_url('mahasiswa/edit/').$m->nim."' class='btn btn-sm btn-warning'>Edit</a> 
-                  <a href='".base_url('mahasiswa/delete/').$m->nim."' class='btn btn-sm btn-danger'>Delete</a>
+                <a href='".base_url('mahasiswa/edit/').$m->nim."' class='btn btn-sm btn-warning'>Edit</a> 
+                <a href='".base_url('mahasiswa/delete/').$m->nim."' class='btn btn-sm btn-danger'>Delete</a>
                 </td>
                 </tr>";
               }
-            ?>
-          </table>
+              ?>
+            </table>
+          </div>
         </div>
       </div>
     </div>

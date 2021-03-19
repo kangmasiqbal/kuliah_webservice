@@ -8,7 +8,7 @@ class jurusan extends REST_Controller {
         parent::__construct($config);
     }
 
-    // show data mahasiswa
+    // show data jurusan
     function index_get() {
         $jurusan = $this->db->get('jurusan')->result();
         $this->response($jurusan, 200);

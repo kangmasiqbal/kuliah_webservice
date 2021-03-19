@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Data Mahasiswa</title>
+  <title>Mokhammad Iqbal - 19.01.63.0004 - Web Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim IT RSUP Dr Kariadi"/>
   <meta name="keywords" content="Tim IT RSUP Dr Kariadi"/>

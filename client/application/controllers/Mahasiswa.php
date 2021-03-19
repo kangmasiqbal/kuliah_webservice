@@ -5,6 +5,7 @@ Class Mahasiswa extends CI_Controller{
     
     function __construct() {
         parent::__construct();
+        // $this->API="http://kangmasiqbal.000webhostapp.com/webservice/server/mahasiswa";
         $this->API="http://localhost:8080/kuliah_webservice/server/";
     }
     
@@ -23,7 +24,7 @@ Class Mahasiswa extends CI_Controller{
                 'id_jurusan'=>  $this->input->post('jurusan'),
                 'alamat'    =>  $this->input->post('alamat'));
             $insert =  $this->curl->simple_post($this->API.'/mahasiswa', $data, array(CURLOPT_BUFFERSIZE => 10)); 
-            print_r($insert);
+            // print_r($insert);
             if($insert)
             {
                 $this->session->set_flashdata('hasil','Insert Data Berhasil');
