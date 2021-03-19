@@ -12,7 +12,7 @@ class mahasiswa extends REST_Controller {
     function index_get() {
         $nim = $this->get('nim');
         if ($nim == '') {
-            $mahasiswa = $this->db->get('jurusan')->result();
+            $mahasiswa = $this->db->get('mahasiswa')->result();
         } else {
             $this->db->where('nim', $nim);
             $mahasiswa = $this->db->get('mahasiswa')->result();
