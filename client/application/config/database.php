@@ -79,6 +79,11 @@ $db['default'] = array(
 	'username' => '',
 	'password' => '',
 	'database' => '',
+
+	// 'username' => 'id16407746_root',
+	// 'password' => 'TsDlb0D&WPGTXY7>',
+	// 'database' => 'id16407746_webservice',
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
