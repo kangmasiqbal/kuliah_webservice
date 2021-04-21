@@ -65,7 +65,7 @@ class customers extends REST_Controller {
                 'address'           =>  $this->put('address'),
                 'city'              =>  $this->put('city'),
                 'state_province'    =>  $this->put('state_province'),
-                'zip_putal_code'    =>  $this->put('zip_putal_code'),
+                'zip_postal_code'   =>  $this->post('zip_postal_code'),
                 'country_region'    =>  $this->put('country_region'),
                 'web_page'          =>  $this->put('web_page'),
                 'notes'             =>  $this->put('notes'),

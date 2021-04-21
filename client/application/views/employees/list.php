@@ -1,7 +1,7 @@
   <div clas="row">
     <div class="col-md-12">
       <div class="card">
-        <h5 class="card-header">Data Customers <a href="<?php echo base_url('customers/create'); ?>" class="btn btn-sm btn-success float-right">Insert Data</a></h5>
+        <h5 class="card-header">Data Employees <a href="<?php echo base_url('employees/create'); ?>" class="btn btn-sm btn-success float-right">Insert Data</a></h5>
         <div class="card-body">
           <div class="table-responsive">
             <table id="myTable" class="table table-sm table-hover">
@@ -30,12 +30,12 @@
               </thead>
               <tbody>
                 <?php
-                foreach ($customers as $m){
+                foreach ($employees as $m){
                   echo "<tr>
                   <td>
                   <div class='btn-group-vertical'>
-                  <a href='".base_url('customers/edit/').$m->id."' class='btn btn-sm btn-warning'>Update</a> 
-                  <a href='".base_url('customers/delete/').$m->id."' class='btn btn-sm btn-danger'>Delete</a>
+                  <a href='".base_url('employees/edit/').$m->id."' class='btn btn-sm btn-warning'>Update</a> 
+                  <a href='".base_url('employees/delete/').$m->id."' class='btn btn-sm btn-danger'>Delete</a>
                   </div>
                   </td>
                   <td>$m->id</td>

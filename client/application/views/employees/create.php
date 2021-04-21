@@ -1,11 +1,11 @@
   <div clas="row">
     <div class="col-md-12">
       <div class="card">
-        <h5 class="card-header">Insert Data Customers 
-          <a href="<?php echo base_url('customers'); ?>" class="btn btn-sm btn-danger float-right">Back</a>
+        <h5 class="card-header">Insert Data Employees 
+          <a href="<?php echo base_url('employees'); ?>" class="btn btn-sm btn-danger float-right">Back</a>
         </h5>
         <div class="card-body">
-          <form class="form-signin" role="form" action="<?php echo base_url('customers/create'); ?>" method="POST">
+          <form class="form-signin" role="form" action="<?php echo base_url('employees/create'); ?>" method="POST">
             <div class="form-group">
               <label>Company</label>
               <input type="text" class="form-control" name="company" value="<?php echo set_value('company') ?>" required autofocus>

@@ -1,12 +1,12 @@
   <div clas="row">
     <div class="col-md-12">
       <div class="card">
-        <h5 class="card-header">Edit Data Customers 
-          <a href="<?php echo base_url('customers'); ?>" class="btn btn-sm btn-danger float-right">Kembali</a>
+        <h5 class="card-header">Update Data Customers 
+          <a href="<?php echo base_url('customers'); ?>" class="btn btn-sm btn-danger float-right">Back</a>
         </h5>
         <div class="card-body">
           <form class="form-signin" role="form" action="<?php echo base_url('customers/edit'); ?>" method="POST">
-            <input type="text" class="form-control" name="id" value="<?php echo $this->uri->segment(3); ?>" readonly required>
+            <input type="hidden" class="form-control" name="id" value="<?php echo $customers[0]->id; ?>" readonly required>
             <div class="form-group">
               <label>Company</label>
               <input type="text" class="form-control" name="company" value="<?php echo $customers[0]->company; ?>" required autofocus>
@@ -75,7 +75,7 @@
               <label>Attachments</label>
               <input type="text" class="form-control" name="attachments" value="<?php echo $customers[0]->attachments; ?>">
             </div>
-            <button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+            <button type="submit" name="submit" value="submit" class="btn btn-success">Save</button>
           </form>
         </div>
       </div>

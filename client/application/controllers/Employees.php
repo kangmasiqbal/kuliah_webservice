@@ -1,23 +1,23 @@
 <?php
-Class Customers extends CI_Controller{
+Class Employees extends CI_Controller{
     
     var $API ="";
     
     function __construct() {
         parent::__construct();
-        // $this->API="http://kangmasiqbal.000webhostapp.com/webservice/server/customers";
+        // $this->API="http://kangmasiqbal.000webhostapp.com/webservice/server/employees";
         $this->API="http://localhost:8080/kuliah_webservice/server/";
     }
     
-    // menampilkan data customers
+    // menampilkan data employees
     function index(){
-        $data['customers'] = json_decode($this->curl->simple_get($this->API.'/customers'));
-        // $this->load->view('customers/list',$data);
-        $data['content'] = 'customers/list';
+        $data['employees'] = json_decode($this->curl->simple_get($this->API.'/employees'));
+        // $this->load->view('employees/list',$data);
+        $data['content'] = 'employees/list';
         $this->load->view('theme',$data);
     }
     
-    // insert data customers
+    // insert data employees
     function create(){
         if(isset($_POST['submit'])){
             $data = array(
@@ -39,7 +39,7 @@ Class Customers extends CI_Controller{
                 'notes'             =>  $this->input->post('notes'),
                 'attachments'       =>  $this->input->post('attachments')
             );
-            $insert =  $this->curl->simple_post($this->API.'/customers', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+            $insert =  $this->curl->simple_post($this->API.'/employees', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             // print_r($insert);
             if($insert)
             {
@@ -48,15 +48,15 @@ Class Customers extends CI_Controller{
             {
                $this->session->set_flashdata('hasil','Insert Data Gagal');
             }
-            redirect('customers');
+            redirect('employees');
         }else{
             $data['jurusan'] = json_decode($this->curl->simple_get($this->API.'/jurusan'));
-            $data['content'] = 'customers/create';
+            $data['content'] = 'employees/create';
             $this->load->view('theme',$data);
         }
     }
     
-    // edit data customers
+    // edit data employees
     function edit(){
         if(isset($_POST['submit'])){
             $data = array(
@@ -79,7 +79,7 @@ Class Customers extends CI_Controller{
                 'notes'             =>  $this->input->post('notes'),
                 'attachments'       =>  $this->input->post('attachments')
             );
-            $update =  $this->curl->simple_put($this->API.'/customers', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+            $update =  $this->curl->simple_put($this->API.'/employees', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             if($update)
             {
                 $this->session->set_flashdata('hasil','Update Data Berhasil');
@@ -87,22 +87,22 @@ Class Customers extends CI_Controller{
             {
                $this->session->set_flashdata('hasil','Update Data Gagal');
             }
-            redirect('customers');
+            redirect('employees');
         }else{
             $params = array('id'=>  $this->uri->segment(3));
-            $data['customers'] = json_decode($this->curl->simple_get($this->API.'/customers',$params));
-            // $this->load->view('customers/edit',$data);
-            $data['content'] = 'customers/edit';
+            $data['employees'] = json_decode($this->curl->simple_get($this->API.'/employees',$params));
+            // $this->load->view('employees/edit',$data);
+            $data['content'] = 'employees/edit';
             $this->load->view('theme',$data);
         }
     }
     
-    // delete data customers
+    // delete data employees
     function delete($id){
         if(empty($id)){
-            redirect('customers');
+            redirect('employees');
         }else{
-            $delete =  $this->curl->simple_delete($this->API.'/customers', array('id'=>$id), array(CURLOPT_BUFFERSIZE => 10)); 
+            $delete =  $this->curl->simple_delete($this->API.'/employees', array('id'=>$id), array(CURLOPT_BUFFERSIZE => 10)); 
             if($delete)
             {
                 $this->session->set_flashdata('hasil','Delete Data Berhasil');
@@ -110,7 +110,7 @@ Class Customers extends CI_Controller{
             {
                $this->session->set_flashdata('hasil','Delete Data Gagal');
             }
-            redirect('customers');
+            redirect('employees');
         }
     }
 }
