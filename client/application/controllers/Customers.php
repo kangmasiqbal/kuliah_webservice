@@ -7,6 +7,7 @@ Class Customers extends CI_Controller{
         parent::__construct();
         // $this->API="http://kangmasiqbal.000webhostapp.com/webservice/server/customers";
         $this->API="http://localhost:8080/kuliah_webservice/server/";
+        if(is_logged_in() == FALSE){ redirect('login'); };
     }
     
     // menampilkan data customers

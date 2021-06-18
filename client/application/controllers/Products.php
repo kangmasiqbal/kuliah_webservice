@@ -7,6 +7,7 @@ Class Products extends CI_Controller{
         parent::__construct();
         // $this->API="http://kangmasiqbal.000webhostapp.com/webservice/server/products";
         $this->API="http://localhost:8080/kuliah_webservice/server/";
+        if(is_logged_in() == FALSE){ redirect('login'); };
     }
     
     // menampilkan data products
